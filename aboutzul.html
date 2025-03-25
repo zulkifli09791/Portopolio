@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Portofolio Zulkifli</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 200vh;  
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        body {
+            margin: 0;
+            height: 200vh;
+        }
+
+        /* Gaya video */
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Agar video memenuhi layar */
+            z-index: -1; /* Video berada di belakang konten */
+        }
+
+        /* Konten utama */
+        .content {
+            position: relative;
+            z-index: 1; /* Pastikan konten muncul di atas video */
+            text-align: center;
+            padding-top: 20%;
+        }
+
+        .content h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .content p {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .content button {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            color: #333;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .content button:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 1em;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <video autoplay muted loop>
+        <source src="bumibg.mp4">
+    </video>
+    <header style="text-align: center;">
+        <h1>About</h1>
+        <hr>
+        <div style="text-align: center; padding: 10px; color: white; font-size: 1.2em;">
+            <a href="index.html" style="color: white; text-decoration: none; margin-right: 20px;">
+              <img src="home.jpeg" alt="Home" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+              Home
+            </a>
+            |
+            <a href="aboutzul.html" style="color: white; text-decoration: none; margin-left: 20px; margin-right: 20px;">
+              <img src="about.jpeg" alt="Tentang" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+              Tentang
+            </a>
+            |
+            <a href="pprojekzul.html" style="color: white; text-decoration: none; margin-left: 20px; margin-right: 20px;">
+              <img src="proyek.jpeg" alt="Proyek" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+              Proyek
+            </a>
+            |
+            <a href="contactzul.html" style="color: white; text-decoration: none; margin-left: 20px;">
+              <img src="kontak.jpeg" alt="Kontak" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+              Kontak
+            </a>
+        </div>
+          
+        <hr>
+    
+    <section id="layout-two">
+        <div class="container">
+            <!-- Bagian Gambar -->
+            <div class="box">
+                <img src="zulfotoo.jpg" alt="Gambar Besar"/>
+            </div>
+            <!-- Bagian Teks -->
+            <div class="box">
+                <h3>Zulkifli</h3>
+                <p>
+                    SEMANGAT
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        /* Kontainer utama */
+        #layout-two .container {
+            display: flex;
+            align-items: center; /* Rata tengah secara vertikal */
+            justify-content: center; /* Rata tengah secara horizontal */
+            padding: 20px;
+        }
+    
+        /* Bagian Gambar */
+        #layout-two .box:first-child {
+            flex: 0.5; /* Bagian gambar lebih lebar */
+            text-align: center; /* Gambar di tengah */
+        }
+    
+        #layout-two img {
+            width: 100%; /* Gambar lebih besar */
+            max-width: 500px; /* Maksimal lebar gambar */
+            height: auto; /* Proporsional */
+            border-radius: 10px; /* Sudut melengkung untuk estetika */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan pada gambar */ 
+        }
+    
+        /* Bagian Teks */
+        #layout-two .box:last-child {
+            flex: 1; /* Bagian teks lebih kecil */
+            text-align: left; /* Teks rata kiri */
+            padding: 20px;
+        }
+    
+        #layout-two h2 {
+            font-size: 1.8em; /* Ukuran judul */
+            color: rgb(73, 146, 196); /* Warna utama */
+            margin-bottom: 10px;
+        }
+    
+        #layout-two p {
+            font-size: 1.2em; /* Ukuran paragraf */
+            line-height: 1.5; /* Spasi antar baris teks */
+        }
+    
+        /* Responsif untuk layar kecil */
+        @media (max-width: 768px) {
+            #layout-two .container {
+                flex-direction: column; /* Tumpuk vertikal */
+            }
+    
+            #layout-two .box {
+                flex: unset; /* Reset ukuran flex */
+                width: 100%; /* Lebar penuh */
+                text-align: center; /* Rata tengah di layar kecil */
+            }
+    
+            #layout-two img {
+                width: 90%; /* Gambar lebih kecil di layar kecil */
+            }
+        }
+
+        footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 15px 20px;
+        font-size: 0.9em;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000; /* Memastikan footer selalu terlihat di atas elemen lain */
+    }
+
+    footer a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+        color: #4caf50; /* Warna hover hijau */
+    }
+
+    footer .social-link {
+        display: inline-flex;
+        align-items: center;
+        margin: 0 15px;
+    }
+
+    footer .social-link img {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        border-radius: 50%; /* Membuat ikon berbentuk lingkaran */
+    }
+
+    footer p {
+        margin-top: 10px;
+        font-size: 0.8em;
+        color: #aaa;
+    }
+    </style>
+
+    <footer>
+        <a href="Outlinezul2.docx">P</a>
+        <a href="https://www.instagram.com/zulkifli_145" target="_blank" class="social-link">
+            <img src="ig.jpeg" alt="Instagram"> Instagram
+        </a>
+        <a href="https://wa.me/6287716021677" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="wa.jpeg" alt="WhatsApp"> WhatsApp
+        </a>
+        <p>&copy; 2025 Zulkifli. All Rights Reserved.</p>
+
+    
+</footer>    
+</body>
+</html>

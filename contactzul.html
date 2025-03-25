@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Portofolio Zulkifli</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        /* Gaya video */
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Agar video memenuhi layar */
+            z-index: -1; /* Video berada di belakang konten */
+        }
+
+        /* Konten utama */
+        .content {
+            position: relative;
+            z-index: 1; /* Pastikan konten muncul di atas video */
+            text-align: center;
+            padding-top: 20%;
+        }
+
+        .content h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .content p {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .content button {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            color: #333;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .content button:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        body {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        body.fade-out {
+            opacity: 0;
+        }
+
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 15px 20px;
+        font-size: 0.9em;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000; /* Memastikan footer selalu terlihat di atas elemen lain */
+    }
+
+    footer a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+        color: #4caf50; /* Warna hover hijau */
+    }
+
+    footer .social-link {
+        display: inline-flex;
+        align-items: center;
+        margin: 0 15px;
+    }
+
+    footer .social-link img {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        border-radius: 50%; /* Membuat ikon berbentuk lingkaran */
+    }
+
+    footer p {
+        margin-top: 10px;
+        font-size: 0.8em;
+        color: #aaa;
+    }
+
+    </style>
+</head>
+<body>
+    <video autoplay muted loop>
+        <source src="bumibg.mp4">
+    </video>
+    <header style="text-align: center;">
+        <h1>Portofolio</h1>
+        <hr>
+        <div style="text-align: center; padding: 10px; color: white; font-size: 1.2em;">
+            <a href="index.html" style="color: white; text-decoration: none; margin-right: 20px;">
+              <img src="home.jpeg" alt="Home" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+              Home
+            </a>
+            |
+            <a href="aboutzul.html" style="color: white; text-decoration: none; margin-left: 20px; margin-right: 20px;">
+              <img src="about.jpeg" alt="Tentang" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+              Tentang
+            </a>
+            |
+            <a href="pprojekzul.html" style="color: white; text-decoration: none; margin-left: 20px; margin-right: 20px;">
+              <img src="proyek.jpeg" alt="Proyek" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+              Proyek
+            </a>
+            |
+            <a href="contactzul.html" style="color: white; text-decoration: none; margin-left: 20px;">
+              <img src="kontak.jpeg" alt="Kontak" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+              Kontak
+            </a>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                if (sessionStorage.getItem("fade")) {
+                    document.body.classList.remove("fade-out");
+                    sessionStorage.removeItem("fade");
+                }
+            });
+    
+            document.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", function (event) {
+                    if (!link.target || link.target === "_self") {
+                        event.preventDefault();
+                        document.body.classList.add("fade-out");
+                        sessionStorage.setItem("fade", "true");
+                        setTimeout(() => {
+                            window.location = link.href;
+                        }, 500);
+                    }
+                });
+            });
+        </script>
+    
+        <hr>
+    </header>
+
+    <section id="contact" style="text-align: center;">
+        <h2>Kontak</h2>
+        <form action="submit-contact.php" method="post">
+            <input type="text" name="name" placeholder="Nama Anda" required>
+            <input type="email" name="email" placeholder="Email Anda" required>
+            <textarea name="message" placeholder="Pesan Anda" required></textarea>
+           <button type="submit">Kirim</button>
+        </form>
+    </section>
+
+    <footer>
+        
+        <a href="https://www.instagram.com/zulkifli_145" target="_blank" class="social-link">
+            <img src="ig.jpeg" alt="Instagram"> Instagram
+        </a>
+        <a href="https://wa.me/6287716021677" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="wa.jpeg" alt="WhatsApp"> WhatsApp
+        </a>
+        <p>&copy; 2025 Zulkifli. All Rights Reserved.</p>
+   
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (sessionStorage.getItem("fade")) {
+                document.body.classList.remove("fade-out");
+                sessionStorage.removeItem("fade");
+            }
+        });
+    
+        document.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", function (event) {
+                if (!link.target || link.target === "_self") {
+                    event.preventDefault();
+                    document.body.classList.add("fade-out");
+                    sessionStorage.setItem("fade", "true");
+                    setTimeout(() => {
+                        window.location = link.href;
+                    }, 500);
+                }
+            });
+        });
+    </script>
+    
+</body>
+
+
